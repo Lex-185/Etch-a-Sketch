@@ -13,6 +13,12 @@
 
         <div class="content">
             <div class="grid-container"></div>
+
+            <div>
+                <input id="value" type="text" placeholder="Grid Size" value="16" onchange="editGrid(this.value)">
+                <button id="submit">Submit</button>
+            </div>
+
             <div class="buttons">
                 <button id="black"></button>
                 <button id="select-color"></button>
@@ -20,10 +26,7 @@
                 <button id="eraser"></button>
                 <button id="clear-canvas"></button>
             </div>
-            <form>
-                <input type="text" placeholder="Grid Size" value="16">
-                <button id="submit">Submit</button>
-            </form>
+            
         </div>
     </div>
 

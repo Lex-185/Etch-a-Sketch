@@ -1,24 +1,23 @@
 // Vars
-let gridContainer = document.querySelector('.grid-container');
 
 // Buttons
-const blackBtn = document.getElementById('black');
-blackBtn.innerText = 'Black'
-const colorBtn = document.getElementById('select-color');
-colorBtn.innerText = 'Select Color'
-const randomBtn = document.getElementById('random');
-randomBtn.innerText = 'Random'
-const eraserBtn = document.getElementById('eraser');
-eraserBtn.innerHTML = 'Eraser'
-const clearBtn = document.getElementById('clear-canvas');
-clearBtn.innerText = 'Clear Canvas'
+document.getElementById('black').innerText = 'Black'
+document.getElementById('select-color').innerText = 'Select Color'
+document.getElementById('random').innerText = 'Random'
+document.getElementById('eraser').innerText = 'Eraser'
+document.getElementById('clear-canvas').innerText = 'Clear Canvas'
 
 // Create grid
 function createGrid(gridSize) {
+    let gridContainer = document.querySelector('.grid-container');
+    let square = gridSize * gridSize;
+    let gridScreen = gridContainer.querySelectorAll('div');
+    gridScreen.forEach((div) => div.remove())
     gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
     gridContainer.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
 
-    for (let i = 0; i < gridSize*gridSize; i++) {
+
+    for (let i = 0; i < square; i++) {
         let gridScreen = document.createElement('div');
         gridScreen.style.backgroundColor = 'var(--screen)';
         gridContainer.insertAdjacentElement('beforeend', gridScreen);
@@ -27,6 +26,10 @@ function createGrid(gridSize) {
             gridScreen.style.backgroundColor = 'var(--dark-blue)';
         }) 
     }
+}
+
+function editGrid(input) {
+    createGrid(input)
 }
 
 createGrid(16)
