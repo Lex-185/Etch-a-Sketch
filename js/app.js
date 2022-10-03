@@ -7,11 +7,11 @@ function createGrid(gridSize) {
 
     for (let i = 0; i < gridSize*gridSize; i++) {
         let gridScreen = document.createElement('div');
-        gridScreen.style.backgroundColor = '--screen';
-        gridContainer.appendChild(gridScreen);
+        gridScreen.style.backgroundColor = 'var(--screen)';
+        gridContainer.insertAdjacentElement('beforeend', gridScreen);
 
         gridScreen.addEventListener('mousemove', () => {
-            gridScreen.style.backgroundColor = '--dark-blue';
+            gridScreen.style.backgroundColor = 'var(--dark-blue)';
         }) 
     }
 }
