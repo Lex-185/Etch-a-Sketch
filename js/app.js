@@ -1,13 +1,14 @@
 // Vars
 let color = 'var(--dark-blue)'  
 let click = true;
+const mode =  document.querySelector('.mode')
 document.querySelector('body').addEventListener('click', (e) => { 
     if (e.target.tagName != 'BUTTON') {
         click = !click;
         if (click) {
-            document.querySelector('.mode').textContent = 'Mode: Not Coloring';
+           mode.innerText = 'Mode: Not Coloring';
         } else {
-            document.querySelector('.mode').textContent = 'Mode: Coloring';
+            mode.innerText= 'Mode: Coloring';
         }
     }
 })
@@ -28,7 +29,6 @@ function createGrid(gridSize) {
         gridContainer.insertAdjacentElement('beforeend', gridScreen);
 
         gridScreen.addEventListener('mousemove', gridColor);
-        gridScreen.addEventListener('mousedown', gridColor);
     }
 }
 
@@ -41,6 +41,7 @@ function gridColor() {
     }
 }
 
+// Grid constraints
 function editGrid(input) {
     if (input >= 2 && input <= 100) {
     createGrid(input)
@@ -63,31 +64,23 @@ function changeColor(newColor) {
     color = newColor;
 }
 
-const blackBtn = document.getElementById('black')
-blackBtn.addEventListener('click', () => {
-    changeColor('var(--dark-blue)')
-})
-blackBtn.innerText = 'Default';
-
-
-const selectBtn = document.getElementById('select-color');
-selectBtn.addEventListener('input', () => {
+const selectBtn = document.getElementById('select-color')
+selectBtn.addEventListener('click', () => {
     color = selectBtn.value;
-})
+});
 
-const randomBtn = document.getElementById('random')
-randomBtn.addEventListener('click', () => {
+document.getElementById('black').addEventListener('click', () => {
+    changeColor('var(--dark-blue)')
+});
+
+document.getElementById('random').addEventListener('click', () => {
     changeColor('random')
-})
-randomBtn.innerText = 'Random';
+});
 
-const eraser = document.getElementById('eraser')
-eraser.addEventListener('click', () => {
+document.getElementById('eraser').addEventListener('click', () => {
     changeColor('var(--screen)')
 });
-eraser.innerText = 'Eraser';
 
-const clearBtn = document.getElementById('clear-canvas')
-clearBtn.addEventListener('click', clearCanvas)
-clearBtn.innerText = 'Clear Canvas'
+document.getElementById('clear-canvas').addEventListener('click', clearCanvas)
+
 
