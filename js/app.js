@@ -1,5 +1,16 @@
 // Vars
-let color = 'var(--dark-blue)'
+let color = 'var(--dark-blue)'  
+let click = true;
+document.querySelector('body').addEventListener('click', (e) => { 
+    if (e.target.tagName != 'BUTTON') {
+        click = !click;
+        if (click) {
+            document.querySelector('.mode').textContent = 'Mode: Not Coloring';
+        } else {
+            document.querySelector('.mode').textContent = 'Mode: Coloring';
+        }
+    }
+})
 
 // Create grid
 function createGrid(gridSize) {
@@ -16,11 +27,13 @@ function createGrid(gridSize) {
         gridScreen.style.backgroundColor = 'var(--screen)';
         gridContainer.insertAdjacentElement('beforeend', gridScreen);
 
-        gridScreen.addEventListener('mousemove', gridColor) 
+        gridScreen.addEventListener('mousemove', gridColor);
+        gridScreen.addEventListener('mousedown', gridColor);
     }
 }
 
 function gridColor() {
+    if (click) return
     if (color === 'random') {
         this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
     } else {
@@ -77,3 +90,4 @@ eraser.innerText = 'Eraser';
 const clearBtn = document.getElementById('clear-canvas')
 clearBtn.addEventListener('click', clearCanvas)
 clearBtn.innerText = 'Clear Canvas'
+
