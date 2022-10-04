@@ -12,20 +12,21 @@
         <header class="header">BMO-Sketch</header>
 
         <div class="mode">Mode: Coloring</div>
+        
         <!-- BMO body -->
         <div class="content">
             <div class="grid-container"></div>
 
-            <div>
-                <input id="value" type="text" placeholder="Grid Size" value="16" onchange="editGrid(this.value)">
-                <button id="submit">Submit</button>
-            </div>
-
-            <div class="color-wheel">
-                <input type="color" id="select-color"></input>
-            </div>
-
             <div class="buttons">
+                <div>
+                    <input id="value" type="text" placeholder="Grid Size" value="16" onchange="editGrid(this.value)">
+                    <button id="submit">Submit</button>
+                </div>
+    
+                <div class="color-wheel">
+                    <input type="color" id="select-color"></input>
+                </div>
+    
                 <button id="black">Default</button>
                 <button id="random">Random</button>
                 <button id="eraser">Eraser</button>

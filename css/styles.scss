@@ -1,0 +1,52 @@
+@font-face {
+    font-family: adventure;
+    src: url(./Thunderman.ttf);
+}
+
+// Vars
+$bmoHeight : 888px;
+$bmoWidth : 672px;
+
+:root {
+    --screen: #d7fae2;
+    --dark-blue: #031e33;
+    --prompt-bar: #174843;
+    --clear-btn: #0e007a;
+    --teal: #6fcaa7;
+    --teal-outline: #09573e;
+    --red-btn: #e9004f;
+    --red-btn-outline: #890335;
+    --blue-btn: #15dad1;
+    --blue-btn-outline: #2097a1;
+    --yellow-btn: #e8d22e;
+    --green-btn: #15d326;
+    --green-btn-outline: #10791b;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: adventure;
+}
+
+.bmo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+
+    .grid-container {
+        display: grid;
+        width: 200px;
+        height: 200px;
+    }
+}
+
+
+
