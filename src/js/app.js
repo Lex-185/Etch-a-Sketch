@@ -65,7 +65,7 @@ function changeColor(newColor) {
 }
 
 const selectBtn = document.getElementById('select-color')
-selectBtn.addEventListener('click', () => {
+selectBtn.addEventListener('change', () => {
     color = selectBtn.value;
 });
 
