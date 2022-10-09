@@ -47,7 +47,7 @@ body {
     
 }
 
-.grid-container {
+.grid-container, .empty-container {
     display: grid;
     margin: 0 auto;
  
@@ -57,6 +57,10 @@ body {
     margin:1.25em auto 1.0em auto;
     border:2px solid #075636;
 
+}
+
+.empty-container {
+    background-color: var(--screen);
 }
 
 .eye {

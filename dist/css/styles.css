@@ -39,7 +39,7 @@ body {
   position: relative;
 }
 
-.grid-container {
+.grid-container, .empty-container {
   display: grid;
   margin: 0 auto;
   border-radius: 0.6em;
@@ -47,6 +47,10 @@ body {
   height: 8.5em;
   margin: 1.25em auto 1em auto;
   border: 2px solid #075636;
+}
+
+.empty-container {
+  background-color: var(--screen);
 }
 
 .eye {

@@ -1,6 +1,8 @@
 // Vars
 let color = 'var(--dark-blue)'  
 let click = true;
+const gridContainer = document.querySelector('.grid-container');
+const emptyContainer = document.querySelector('.empty-container')
 const mode =  document.querySelector('.mode')
 const bmoFace = document.querySelector('.bmo-face')
 document.querySelector('body').addEventListener('click', (e) => { 
@@ -15,8 +17,8 @@ document.querySelector('body').addEventListener('click', (e) => {
 })
 
 // Create grid
+gridContainer.classList.add('hidden')
 function createGrid(gridSize) {
-    let gridContainer = document.querySelector('.grid-container');
     let square = gridSize * gridSize;
     let gridScreen = gridContainer.querySelectorAll('div');
     gridScreen.forEach((div) => div.remove())
@@ -65,6 +67,17 @@ function clearCanvas() {
     displayScreen()
 }
 
+// Show sketch board
+const gameBtn = document.getElementById('remove-screen');
+gameBtn.addEventListener('click', () => {
+    gameBtn.innerText = 'Hide Sketch Board'
+    bmoFace.toggleAttribute('hidden')
+    gridContainer.classList.toggle('hidden')
+    emptyContainer.classList.toggle('hidden')
+    displayScreen()
+});
+
+
 // Buttons
 function changeColor(newColor) {
     color = newColor;
@@ -73,13 +86,6 @@ function changeColor(newColor) {
 const selectBtn = document.getElementById('select-color')
 selectBtn.addEventListener('change', () => {
     color = selectBtn.value;
-});
-
-const gameBtn = document.getElementById('remove-screen');
-gameBtn.addEventListener('click', () => {
-    gameBtn.innerText = 'Hide Sketch Board'
-    bmoFace.toggleAttribute('hidden')
-    displayScreen()
 });
 
 document.getElementById('black').addEventListener('click', () => {
