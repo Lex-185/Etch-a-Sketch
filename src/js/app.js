@@ -2,6 +2,7 @@
 let color = 'var(--dark-blue)'  
 let click = true;
 const mode =  document.querySelector('.mode')
+const bmoFace = document.querySelector('.bmo-face')
 document.querySelector('body').addEventListener('click', (e) => { 
     if (e.target.tagName != 'BUTTON') {
         click = !click;
