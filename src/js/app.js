@@ -53,11 +53,16 @@ function editGrid(input) {
 
 createGrid(16)
 
-// Clear Canvas
-function clearCanvas() {
+// Hide Screen 
+function displayScreen() {
     let gridContainer = document.querySelector('.grid-container');
     let gridScreen = gridContainer.querySelectorAll('div');
     gridScreen.forEach((div) => div.style.backgroundColor = 'var(--screen)')
+}
+
+// Clear Canvas
+function clearCanvas() {
+    displayScreen()
 }
 
 // Buttons
@@ -68,6 +73,13 @@ function changeColor(newColor) {
 const selectBtn = document.getElementById('select-color')
 selectBtn.addEventListener('change', () => {
     color = selectBtn.value;
+});
+
+const gameBtn = document.getElementById('remove-screen');
+gameBtn.addEventListener('click', () => {
+    gameBtn.innerText = 'Hide Sketch Board'
+    bmoFace.toggleAttribute('hidden')
+    displayScreen()
 });
 
 document.getElementById('black').addEventListener('click', () => {
