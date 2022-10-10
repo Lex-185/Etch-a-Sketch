@@ -29,8 +29,8 @@ body {
   text-align: center;
   background-color: #67caa7;
   opacity: 1;
-  height: 444px;
-  width: 336px;
+  height: 700px;
+  width: 500px;
   box-shadow: 2px 3px 0px 2px rgb(99, 153, 117);
   border: 2px solid #075636;
   border-radius: 0.9em;
@@ -44,8 +44,8 @@ body {
   display: grid;
   margin: 0 auto;
   border-radius: 0.6em;
-  width: 78%;
-  height: 8.5em;
+  width: 90%;
+  height: 300px;
   margin: 1.25em auto 1em auto;
   border: 2px solid #075636;
   box-shadow: 2px 2px 2px rgb(147, 177, 141) inset;
@@ -57,8 +57,8 @@ body {
 
 .eye {
   border-radius: 100%;
-  width: 0.5em;
-  height: 0.5em;
+  width: 15px;
+  height: 15px;
   position: absolute;
   background-color: #000;
 }
@@ -78,7 +78,7 @@ body {
   width: 1.5em;
   height: 1.5em;
   border-radius: 100%;
-  border: 1px solid #000;
+  border: 2px solid #000;
   top: 45%;
   left: 50%;
   margin-left: -1em;
@@ -97,10 +97,18 @@ body {
   background-color: var(--screen);
 }
 
+.top-btns {
+  width: 90%;
+  margin: 25px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
 #value {
   position: relative;
-  width: 180px;
-  height: 20px;
+  border: none;
+  width: 55%;
+  height: 25px;
   margin-right: 30px;
   background-color: #174843;
   color: #fff;
@@ -109,41 +117,51 @@ body {
 
 #submit {
   position: relative;
+  border: none;
   background-color: #0e007a;
-  width: 25px;
-  height: 25px;
-  top: 5px;
+  width: 30px;
+  height: 30px;
+  right: 5px;
+  top: -5px;
   box-shadow: 2px -2px 0px rgb(0, 13, 102) inset;
   border-radius: 50%;
+}
+
+.center-btns {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  height: 220px;
+  margin: 0 auto;
 }
 
 .dpad {
   position: relative;
   background-color: #e8d22e;
   box-shadow: 2px 2px 0px rgb(155, 142, 0);
-  width: 25px;
-  height: 75px;
+  width: 40px;
+  height: 120px;
   top: 50px;
-  left: 30px;
-  margin-left: 40px;
+  left: 40px;
+  margin-left: 70px;
 }
 .dpad.dpad::after {
   position: absolute;
   content: "";
-  width: 25px;
-  height: 25px;
-  top: 25px;
-  left: -25px;
+  width: 40px;
+  height: 40px;
+  top: 40px;
+  left: -40px;
   background-color: #e8d22e;
   box-shadow: 0px -2px 0px rgb(155, 142, 0);
 }
 .dpad.dpad::before {
   position: absolute;
   content: "";
-  width: 25px;
-  height: 25px;
-  top: 25px;
-  left: 25px;
+  width: 40px;
+  height: 40px;
+  top: 40px;
+  left: 40px;
   background-color: #e8d22e;
   box-shadow: 2px -2px 0px rgb(155, 142, 0);
 }
@@ -151,39 +169,39 @@ body {
 #black {
   position: relative;
   background: none;
+  border: none;
   width: 0;
   height: 0;
-  right: -60px;
-  top: -45px;
-  border-left: 17px solid transparent;
-  border-right: 17px solid transparent;
-  border-bottom: 30px solid #15dad1;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 45px solid #15dad1;
+  top: -60px;
+  left: -30px;
   filter: drop-shadow(2px 2px 0px #2097a1);
 }
 
 #random {
   position: relative;
   border-radius: 50%;
-  top: -20px;
-  right: -100px;
-  width: 30px;
-  height: 30px;
+  border: none;
+  width: 55px;
+  height: 55px;
+  bottom: -47px;
   background-color: #15d326;
   box-shadow: -2px -2px 0px #10791b inset;
 }
 
 .color-wheel {
   position: relative;
-  border-radius: 25px;
-  top: -30px;
-  right: -220px;
-  width: 50px;
-  height: 50px;
+  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+  left: -55px;
   background-color: #e9004f;
   box-shadow: -2px -2px 0px #890335 inset;
 }
 
-#select-color {
+#select-color, #eraser {
   position: absolute;
   top: 0;
   left: 0;
@@ -192,15 +210,25 @@ body {
   opacity: 0;
 }
 
+.end-btns {
+  display: flex;
+  justify-content: flex-start;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: -15px;
+}
+
 #clear-canvas, #remove-screen {
+  font-family: inherit;
   position: relative;
   text-align: center;
   color: #fff;
+  border: none;
   border-radius: 10px;
-  height: 18px;
-  width: 95px;
-  left: 0px;
-  top: -15px;
+  height: 25px;
+  width: 105px;
+  margin-right: 35px;
+  padding: 5px;
   background-color: #0e007a;
   box-shadow: -2px -2px 0px rgb(0, 13, 102) inset;
 }

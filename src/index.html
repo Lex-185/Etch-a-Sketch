@@ -31,23 +31,30 @@
             <div class="buttons">
 
                 <div class="display-buttons">
-                    <div class="prompt-bar">
+                    <div class="top-btns">
                         <input id="value" type="text" placeholder="Grid Size" value="16" onchange="editGrid(this.value)">
                         <button id="submit"></button>
                     </div>
                    
                     <div class="center-btns">
-                        <div class="dpad"></div>
-                        <button id="black"></button>
-                        <button id="random"></button>
-                        <div class="circle"></div>
-                        <div class="color-wheel">
-                            <input type="color" id="select-color"></input>
+                        <div class="left-side">
+                            <div class="dpad">
+                                <button id="eraser">Eraser</button>
+                            </div>
+                        </div>
+
+                        <div class="right-side">
+                            <button id="black"></button>
+                            <button id="random"></button>
+                            <div class="circle"></div>
+                            <div class="color-wheel">
+                                <input type="color" id="select-color"></input>
+                            </div>
+                        
                         </div>
                     </div>
 
-                    <div class="end-buttons">
-                        <button id="eraser">Eraser</button>
+                    <div class="end-btns">
                         <button id="clear-canvas">Clear Canvas</button>
                         <button id="remove-screen">Toggle Screen</button>
                     </div>
