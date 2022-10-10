@@ -31,6 +31,7 @@ body {
   opacity: 1;
   height: 444px;
   width: 336px;
+  box-shadow: 2px 3px 0px 2px rgb(99, 153, 117);
   border: 2px solid #075636;
   border-radius: 0.9em;
 }
@@ -47,6 +48,7 @@ body {
   height: 8.5em;
   margin: 1.25em auto 1em auto;
   border: 2px solid #075636;
+  box-shadow: 2px 2px 2px rgb(147, 177, 141) inset;
 }
 
 .empty-container {
@@ -93,6 +95,114 @@ body {
   width: 2.25em;
   height: 1em;
   background-color: var(--screen);
+}
+
+#value {
+  position: relative;
+  width: 180px;
+  height: 20px;
+  margin-right: 30px;
+  background-color: #174843;
+  color: #fff;
+  box-shadow: 2px 2px 2px rgba(8, 55, 39, 0.699) inset;
+}
+
+#submit {
+  position: relative;
+  background-color: #0e007a;
+  width: 25px;
+  height: 25px;
+  top: 5px;
+  box-shadow: 2px -2px 0px rgb(0, 13, 102) inset;
+  border-radius: 50%;
+}
+
+.dpad {
+  position: relative;
+  background-color: #e8d22e;
+  box-shadow: 2px 2px 0px rgb(155, 142, 0);
+  width: 25px;
+  height: 75px;
+  top: 50px;
+  left: 30px;
+  margin-left: 40px;
+}
+.dpad.dpad::after {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 25px;
+  top: 25px;
+  left: -25px;
+  background-color: #e8d22e;
+  box-shadow: 0px -2px 0px rgb(155, 142, 0);
+}
+.dpad.dpad::before {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 25px;
+  top: 25px;
+  left: 25px;
+  background-color: #e8d22e;
+  box-shadow: 2px -2px 0px rgb(155, 142, 0);
+}
+
+#black {
+  position: relative;
+  background: none;
+  width: 0;
+  height: 0;
+  right: -60px;
+  top: -45px;
+  border-left: 17px solid transparent;
+  border-right: 17px solid transparent;
+  border-bottom: 30px solid #15dad1;
+  filter: drop-shadow(2px 2px 0px #2097a1);
+}
+
+#random {
+  position: relative;
+  border-radius: 50%;
+  top: -20px;
+  right: -100px;
+  width: 30px;
+  height: 30px;
+  background-color: #15d326;
+  box-shadow: -2px -2px 0px #10791b inset;
+}
+
+.color-wheel {
+  position: relative;
+  border-radius: 25px;
+  top: -30px;
+  right: -220px;
+  width: 50px;
+  height: 50px;
+  background-color: #e9004f;
+  box-shadow: -2px -2px 0px #890335 inset;
+}
+
+#select-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100% + 8px);
+  width: 100%;
+  opacity: 0;
+}
+
+#clear-canvas, #remove-screen {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  border-radius: 10px;
+  height: 18px;
+  width: 95px;
+  left: 0px;
+  top: -15px;
+  background-color: #0e007a;
+  box-shadow: -2px -2px 0px rgb(0, 13, 102) inset;
 }
 
 .hidden {

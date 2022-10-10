@@ -70,7 +70,7 @@ function clearCanvas() {
 // Show sketch board
 const gameBtn = document.getElementById('remove-screen');
 gameBtn.addEventListener('click', () => {
-    gameBtn.innerText = 'Hide Sketch Board'
+    gameBtn.innerText = 'Toggle Screen'
     bmoFace.toggleAttribute('hidden')
     gridContainer.classList.toggle('hidden')
     emptyContainer.classList.toggle('hidden')
@@ -84,8 +84,9 @@ function changeColor(newColor) {
 }
 
 const selectBtn = document.getElementById('select-color')
-selectBtn.addEventListener('change', () => {
+selectBtn.addEventListener('change', (e) => {
     color = selectBtn.value;
+    e.currentTarget.style.backgroundColor = e.currentTarget.value;
 });
 
 document.getElementById('black').addEventListener('click', () => {
@@ -102,4 +103,4 @@ document.getElementById('eraser').addEventListener('click', () => {
 
 document.getElementById('clear-canvas').addEventListener('click', clearCanvas)
 
-
+// color wheel 

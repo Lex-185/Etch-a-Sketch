@@ -15,6 +15,8 @@
         
         <!-- BMO body -->
         <div class="content">
+
+
             <!-- Face and grid -->
             <div class="bmo-grid">
                 <div class="empty-container"></div>
@@ -27,20 +29,29 @@
             </div>
 
             <div class="buttons">
-                <div>
-                    <input id="value" type="text" placeholder="Grid Size" value="16" onchange="editGrid(this.value)">
-                    <button id="submit">Submit</button>
-                </div>
-    
-                <div class="color-wheel">
-                    <input type="color" id="select-color"></input>
-                </div>
-    
-                <button id="black">Default</button>
-                <button id="random">Random</button>
-                <button id="eraser">Eraser</button>
-                <button id="clear-canvas">Clear Canvas</button>
-                <button id="remove-screen">Show Sketch Board</button>
+
+                <div class="display-buttons">
+                    <div class="prompt-bar">
+                        <input id="value" type="text" placeholder="Grid Size" value="16" onchange="editGrid(this.value)">
+                        <button id="submit"></button>
+                    </div>
+                   
+                    <div class="center-btns">
+                        <div class="dpad"></div>
+                        <button id="black"></button>
+                        <button id="random"></button>
+                        <div class="circle"></div>
+                        <div class="color-wheel">
+                            <input type="color" id="select-color"></input>
+                        </div>
+                    </div>
+
+                    <div class="end-buttons">
+                        <button id="eraser">Eraser</button>
+                        <button id="clear-canvas">Clear Canvas</button>
+                        <button id="remove-screen">Toggle Screen</button>
+                    </div>
+                 </div>
             </div>
             
         </div>
