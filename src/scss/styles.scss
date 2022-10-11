@@ -4,9 +4,9 @@
 }
 
 // Vars
-$bmoHeight : 700px;
+$bmoHeight : 750px;
 $bmoWidth : 500px;
-$width : 90%;
+$width : 80%;
 $margin : 0 auto;
 
 :root {
@@ -47,18 +47,18 @@ body {
     position: relative;
 }
 
-.grid-container, .empty-container {
+.grid-container, .empty-container, .controls-container{
     display: grid;
     margin: 0 auto;
  
     border-radius: 0.6em;
-    width: 90%; height: 300px;
+    width: $width; height: 400px;
     margin:1.25em auto 1.0em auto;
     border:2px solid #075636;
     box-shadow: 2px 2px 2px rgba(147, 177, 141, 1) inset;
 }
 
-.empty-container {
+.empty-container, .controls-container {
     background-color: var(--screen);
 }
 
@@ -70,10 +70,10 @@ body {
 }
 
 .left-eye {
-    left:28%; top:35%;
+    left:28%; top:40%;
 }
 .right-eye {
-    right:28%; top:35%;
+    right:28%; top:40%;
 }
 
 .mouth {
@@ -81,7 +81,7 @@ body {
     width: 1.5em; height: 1.5em;
     border-radius: 100%;
     border: 2px solid #000;
-    top: 45%; left: 50%; margin-left: -1em;
+    top: 50%; left: 50%; margin-left: -1em;
 }
 
 .mouth::after {
@@ -95,23 +95,22 @@ body {
         background-color: var(--screen);
 }
 // Buttons
-.top-btns {
-    width: 90%;
-    margin: 25px auto;
-    display: flex;
-    justify-content: space-between;
+
+.top {
+    width:  $width;
+    margin: 25px auto; padding: 10xp;
+    display: flex; justify-content: space-between;
 }
 
 #value {
     position: relative;
     border: none;
-    width:55%; height: 25px; margin-right: 30px;
-    background-color: #174843;
-    color: #fff;
+    width:55%; height: 25px; margin-right: 30px; padding: 3px;
+    background-color: #174843; color: #fff;
     box-shadow: 2px 2px 2px rgba(8, 55, 39, 0.699) inset
 }
 
-#submit {
+#change-screen {
     position: relative;
     border: none;
     background-color: #0e007a;
@@ -121,18 +120,21 @@ body {
 }
 
 // Center buttons
-.center-btns {
+.center {
     display: flex;
     justify-content: space-between;
-    width: $width; height: 220px; margin: $margin;
+    width: $width; height: 220px; margin: $margin; padding: 10px;
 }
 
 .dpad {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: #e8d22e;
     box-shadow: 2px 2px 0px rgb(155, 142, 0);
     width: 40px; height: 120px; top: 50px; left: 40px;
-    margin-left: 70px;
+    margin-left: 40px; margin-top: -25px;
 
     &.dpad::after {
         position: absolute;
@@ -150,16 +152,23 @@ body {
     }
 }
 
-#black{
+#default-pen{ 
+    font-family: inherit;
     position: relative;
     background: none;
     border: none;
-    width: 0; height: 0; 
-    border-left: 25px solid transparent; border-right: 25px solid transparent; border-bottom: 45px solid #15dad1; top: -60px; left: -30px;
+    width: 0; height: 0; top: -60px; left: -30px;
+    border-left: 25px solid transparent; border-right: 25px solid transparent; border-bottom: 45px solid #15dad1; border-top: 0px solid;
     filter: drop-shadow(2px 2px 0px #2097a1);
 }
 
-#random {
+#default-pen:hover, #random-pen:hover, .color-wheel:hover, .dpad:hover, #clear-canvas:hover, #toggle-screen:hover, #change-screen:hover {
+    transform: translate(1px, 1px);
+    transition: all 0.1s ease-in;
+}
+
+#random-pen {
+    font-family: inherit;
     position: relative;
     border-radius: 50%;
     border: none;
@@ -170,25 +179,29 @@ body {
 
 .color-wheel {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
     border-radius: 100%;
-    width: 80px; height: 80px; left: -55px;
+    width: 80px; height: 80px; left: -45px; top: -15px;
     background-color: #e9004f;
     box-shadow: -2px -2px 0px #890335 inset;
 }
 
-#select-color, #eraser {
+#color-pen, #eraser {
     position: absolute;
     top: 0; left: 0; height: calc(100% + 8px); width: 100%;
     opacity: 0; 
 }
 
-.end-btns {
+.end {
     display: flex;
     justify-content: flex-start;
     width: $width; margin: $margin; margin-top: -15px;
 }
 
-#clear-canvas, #remove-screen{
+#clear-canvas, #toggle-screen{
     font-family: inherit;
     position: relative; 
     text-align: center;

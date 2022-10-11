@@ -16,8 +16,7 @@
         <!-- BMO body -->
         <div class="content">
 
-
-            <!-- Face and grid -->
+            <!-- Grid containers -->
             <div class="bmo-grid">
                 <div class="empty-container"></div>
                 <div class="grid-container"></div>
@@ -28,39 +27,34 @@
                 </div>
             </div>
 
-            <div class="buttons">
-
+            <!-- Buttons -->
                 <div class="display-buttons">
-                    <div class="top-btns">
+                    <div class="top">
                         <input id="value" type="text" placeholder="Grid Size" value="16" onchange="editGrid(this.value)">
-                        <button id="submit"></button>
+                        <button id="change-screen"></button>
                     </div>
                    
-                    <div class="center-btns">
+                    <div class="center">
                         <div class="left-side">
                             <div class="dpad">
-                                <button id="eraser">Eraser</button>
+                                <button id="eraser" class="eraser"></button>
                             </div>
                         </div>
 
                         <div class="right-side">
-                            <button id="black"></button>
-                            <button id="random"></button>
-                            <div class="circle"></div>
+                            <button id="default-pen" class="default-pen"></button>         
+                            <button id="random-pen" class="random-pen"></button>
                             <div class="color-wheel">
-                                <input type="color" id="select-color"></input>
+                                <input type="color" id="color-pen" class="color-pen"></input>
                             </div>
-                        
                         </div>
                     </div>
 
-                    <div class="end-btns">
+                    <div class="end">
                         <button id="clear-canvas">Clear Canvas</button>
-                        <button id="remove-screen">Toggle Screen</button>
+                        <button id="toggle-screen">Toggle Screen</button>
                     </div>
                  </div>
-            </div>
-            
         </div>
     </div>
 

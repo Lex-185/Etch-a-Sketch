@@ -37,7 +37,7 @@ function createGrid(gridSize) {
 
 function gridColor() {
     if (click) return
-    if (color === 'random') {
+    if (color === 'random-pen') {
         this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
     } else {
         this.style.backgroundColor = color;
@@ -67,13 +67,18 @@ function clearCanvas() {
     displayScreen()
 }
 
-// Show sketch board
-const gameBtn = document.getElementById('remove-screen');
-gameBtn.addEventListener('click', () => {
-    gameBtn.innerText = 'Toggle Screen'
+// Toggle screen
+function toggleScreen() {
     bmoFace.toggleAttribute('hidden')
     gridContainer.classList.toggle('hidden')
     emptyContainer.classList.toggle('hidden')
+}
+
+// Show sketch board
+const gameBtn = document.getElementById('toggle-screen');
+gameBtn.addEventListener('click', () => {
+    gameBtn.innerText = 'Toggle Screen'
+    toggleScreen()
     displayScreen()
 });
 
@@ -83,18 +88,18 @@ function changeColor(newColor) {
     color = newColor;
 }
 
-const selectBtn = document.getElementById('select-color')
+const selectBtn = document.getElementById('color-pen')
 selectBtn.addEventListener('change', (e) => {
     color = selectBtn.value;
     e.currentTarget.style.backgroundColor = e.currentTarget.value;
 });
 
-document.getElementById('black').addEventListener('click', () => {
+document.getElementById('default-pen').addEventListener('click', () => {
     changeColor('var(--dark-blue)')
 });
 
-document.getElementById('random').addEventListener('click', () => {
-    changeColor('random')
+document.getElementById('random-pen').addEventListener('click', () => {
+    changeColor('random-pen')
 });
 
 document.getElementById('eraser').addEventListener('click', () => {
@@ -103,4 +108,3 @@ document.getElementById('eraser').addEventListener('click', () => {
 
 document.getElementById('clear-canvas').addEventListener('click', clearCanvas)
 
-// color wheel 
