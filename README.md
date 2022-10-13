@@ -1,5 +1,6 @@
 # BMO-Sketch
 Etch-a-sketch with BMO.
+[Live preview](https://lex-185.github.io/Etch-a-Sketch/)
 
 Symbols:
 * Blue triangle = Default pen 
