@@ -1,6 +1,7 @@
 // Vars
 let color = 'var(--dark-blue)'  
 let click = true;
+const bmoGrid = document.querySelector('.bom-grid')
 const gridContainer = document.querySelector('.grid-container');
 const emptyContainer = document.querySelector('.empty-container')
 const mode =  document.querySelector('.mode')
@@ -25,12 +26,10 @@ function createGrid(gridSize) {
     gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
     gridContainer.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
 
-
     for (let i = 0; i < square; i++) {
         let gridScreen = document.createElement('div');
         gridScreen.style.backgroundColor = 'var(--screen)';
         gridContainer.insertAdjacentElement('beforeend', gridScreen);
-
         gridScreen.addEventListener('mousemove', gridColor);
     }
 }
@@ -46,10 +45,13 @@ function gridColor() {
 
 // Grid constraints
 function editGrid(input) {
+    const value = document.getElementById('value')
     if (input >= 2 && input <= 100) {
     createGrid(input)
+    } else if (input <= 2) {
+        value.value = 'Min: 2'
     } else {
-        document.getElementById('value').value = '...'
+        value.value = 'Max: 100'
     }
 }
 
@@ -81,7 +83,6 @@ gameBtn.addEventListener('click', () => {
     toggleScreen()
     displayScreen()
 });
-
 
 // Buttons
 function changeColor(newColor) {
